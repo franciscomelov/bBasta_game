@@ -1,2 +1,2 @@
-# bBasta_game
+# Basta_game
 Game similar to basta, using python and  Kivy
