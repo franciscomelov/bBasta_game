@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WebApp ABC</title>
+    <script>navigator.serviceWorker.register("service-worker.js")</script> 
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="letter"></h1>
+      <div class="timer-bar-container">
+        <div id="timer-bar" class="timer-bar"></div>
+      </div>
+      <button id="startBtn">Iniciar</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

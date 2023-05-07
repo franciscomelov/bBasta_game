@@ -1,3 +1,5 @@
+from kivy.core.window import Window
+
 import random
 import string
 from kivy.app import App
@@ -13,10 +15,18 @@ class TestApp(App):
         self.used_letters = set()
         self.time_left = 5
         layout = BoxLayout(orientation='vertical')
-        self.label = Label(text='', font_size=50, halign='center')
-        self.progress_bar = ProgressBar(max=5, value=5)
-        button = Button(text='Iniciar', size_hint=(None, None), size=(200, 50))
+
+        # Set font size of the label based on the screen height
+        label_font_size = int(Window.height * 0.1)
+        self.label = Label(text='', font_size=label_font_size, halign='center')
+
+        # Set size of the button based on the screen width
+        button_size = int(Window.width * 0.15)
+        button = Button(text='Iniciar', size_hint=(None, None), size=(button_size, button_size))
         button.bind(on_press=self.on_button_press)
+
+        self.progress_bar = ProgressBar(max=5, value=5, width=1)
+
         layout.add_widget(self.label)
         layout.add_widget(self.progress_bar)
         layout.add_widget(button)

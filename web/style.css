@@ -1,0 +1,34 @@
+body {
+    font-family: sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  h1 {
+    font-size: 8rem;
+    margin-bottom: 2rem;
+  }
+  
+  .timer-bar-container {
+    width: 100%;
+    height: 20px;
+    background-color: #ccc;
+  }
+  
+  .timer-bar {
+    height: 100%;
+    background-color: #4caf50;
+  }
+  
+  button {
+    font-size: 1em;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
