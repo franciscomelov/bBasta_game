@@ -1,4 +1,5 @@
 from kivy.core.window import Window
+from kivy.core.audio import SoundLoader
 
 import random
 import string
@@ -15,6 +16,10 @@ class TestApp(App):
         self.used_letters = set()
         self.time_left = 5
         layout = BoxLayout(orientation='vertical')
+
+        #sound timer
+        self.sound = SoundLoader.load('timer.wav')
+
 
         # Set font size of the label based on the screen height
         label_font_size = int(Window.height * 0.1)
@@ -44,15 +49,17 @@ class TestApp(App):
         return letter
 
     def update_time_left(self, dt):
+
         self.time_left -= 1
         self.progress_bar.value = self.time_left
         if self.time_left == 0:
             self.label.text = 'YOU LOSE!'
 
     def on_button_press(self, instance):
+        self.sound.play()
         self.label.text = self.get_random_letter()
-        self.time_left = 5
-        self.progress_bar.value = 5
+        self.time_left = 4
+        self.progress_bar.value = 4
         Clock.unschedule(self.update_time_left)
         Clock.schedule_interval(self.update_time_left, 1)
 
